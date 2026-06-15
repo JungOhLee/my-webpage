@@ -45,7 +45,7 @@ export const projects = [
     title: "Bone Metastasis Detection on CT",
     description:
       "An expert-comparable 3D model, validated across multiple centers against CT, MRI, and PET/CT reference standards — and released publicly with open model weights.",
-    badges: ["Radiology: AI 2026", "Multicenter validation", "Open-source"],
+    badges: ["Radiology: AI 2026", "Multicenter development", "Open-source"],
     links: [
       {
         label: "Paper",
@@ -60,7 +60,7 @@ export const projects = [
   {
     title: "Multimodal Generative AI for 3D Imaging",
     description:
-      "A perspective on how generative models can interpret volumetric scans and clinical videos — laying out the core capabilities, opportunities, and open challenges for 3D and video-based medical AI.",
+      "A perspective on how generative models should interpret volumetric scans and clinical videos — laying out the core capabilities, opportunities, and open challenges for 3D and video-based medical AI.",
     badges: ["npj Digital Medicine 2025", "Perspective", "Vision-language models"],
     links: [
       {
@@ -72,7 +72,7 @@ export const projects = [
   {
     title: "Evaluation Systems for Radiology AI",
     description:
-      "Benchmarks and frameworks that probe whether radiology AI truly reasons — spanning visual question answering, entity-level clinical safety, structured diagnostic reasoning, and LLM-based systematic analysis.",
+      "Benchmarks and frameworks for evaluating the reliability of radiology AI models — spanning visual question answering, entity-level clinical safety, structured diagnostic reasoning, and LLM-based systematic analysis.",
     badges: ["MICCAI 2025", "PSB 2026", "Benchmarks · Reasoning"],
     links: [
       {
