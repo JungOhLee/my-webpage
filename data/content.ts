@@ -52,6 +52,10 @@ export const projects = [
         href: "https://scholar.google.com/scholar?q=Bone+metastasis+detection+at+CT+with+deep+learning+models+trained+using+multicenter+multimodal+reference+standards",
       },
       {
+        label: "GitHub",
+        href: "https://github.com/JungOhLee/BoneMet-CT",
+      },
+      {
         label: "Model (Zenodo)",
         href: "https://zenodo.org/records/14872632",
       },
