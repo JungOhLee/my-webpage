@@ -1,8 +1,11 @@
 // All site content lives here — edit this file to update the website.
 
 export const profile = {
-  name: "Jung-Oh Lee, MD, MSc",
   shortName: "Jung-Oh Lee",
+  // Korean name, shown once next to the English name (hero + footer) and fed to
+  // structured data so Korean-name searches (이정오) resolve to this site.
+  koreanName: "이정오",
+  degrees: "MD, MSc",
   title: "Clinical Assistant Professor of Radiology, NYU Langone Health",
   headline: "Advancing radiology AI for real clinical impact.",
   intro:
@@ -198,3 +201,35 @@ export const collaboration = {
     "Open-source models & benchmarks",
   ],
 };
+
+// Absolute site URL, used for canonical/OG/sitemap/structured data.
+export const siteUrl = "https://jolee.me";
+
+// schema.org Person JSON-LD — alternateName pairs the English and Korean names
+// so searches in either language resolve to this site.
+export function personJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: profile.shortName,
+    // Spelling variants people actually search for, plus the Korean name.
+    alternateName: [
+      profile.koreanName,
+      "JungOh Lee",
+      "Jung Oh Lee",
+      `${profile.shortName}, ${profile.degrees}`,
+    ],
+    honorificSuffix: profile.degrees,
+    jobTitle: "Clinical Assistant Professor of Radiology",
+    worksFor: {
+      "@type": "Organization",
+      name: "NYU Langone Health",
+      url: "https://nyulangone.org",
+    },
+    description: profile.intro,
+    knowsAbout: profile.keywords,
+    url: siteUrl,
+    sameAs: [profile.linkedin, profile.scholar, profile.github],
+  };
+}

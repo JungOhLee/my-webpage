@@ -6,6 +6,7 @@ import {
   publications,
   vision,
   collaboration,
+  personJsonLd,
 } from "@/data/content";
 
 const navLinks = [
@@ -83,6 +84,15 @@ function ExternalLink({ href, children }: { href: string; children: string }) {
   );
 }
 
+function KoreanName() {
+  return (
+    <>
+      {" "}
+      (<span lang="ko">{profile.koreanName}</span>)
+    </>
+  );
+}
+
 function PublicationRow({ pub }: { pub: (typeof publications)[number] }) {
   return (
     <div className="border-b border-slate-200 py-4 last:border-b-0">
@@ -108,6 +118,13 @@ export default function Home() {
 
   return (
     <div className="flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
         <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-3">
@@ -132,7 +149,8 @@ export default function Home() {
         {/* Hero */}
         <section className="pt-20 sm:pt-28">
           <p className="text-sm font-medium text-slate-500">
-            {profile.name} · {profile.title}
+            {profile.shortName}
+            <KoreanName />, {profile.degrees} · {profile.title}
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.1]">
             {profile.headline}
@@ -301,6 +319,7 @@ export default function Home() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-4xl px-6 py-8 text-sm text-slate-500">
           © {new Date().getFullYear()} {profile.shortName}
+          <KoreanName />
         </div>
       </footer>
     </div>
